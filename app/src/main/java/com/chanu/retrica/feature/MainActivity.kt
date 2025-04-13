@@ -1,4 +1,4 @@
-package com.chanu.retrica
+package com.chanu.retrica.feature
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
