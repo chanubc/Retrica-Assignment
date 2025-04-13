@@ -37,8 +37,9 @@ android {
             jvmTarget.set(JvmTarget.JVM_17)
         }
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -52,4 +53,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // timber
+    implementation(libs.timber)
+    // coroutine
+    implementation(libs.bundles.coroutine)
 }
