@@ -29,8 +29,9 @@ object ColorMatrixFactory {
         return sharedMatrix
     }
 
-    fun toCustomFilter(matrix: FloatArray) {
+    fun toCustomFilter(matrix: FloatArray): ColorMatrix {
         sharedMatrix.reset()
         sharedMatrix.set(matrix)
+        return sharedMatrix
     }
 }
