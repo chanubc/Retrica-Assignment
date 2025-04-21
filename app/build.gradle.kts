@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.chanu.retrica"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.chanu.retrica"
