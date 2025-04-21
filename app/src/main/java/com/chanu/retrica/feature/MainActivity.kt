@@ -82,8 +82,4 @@ class MainActivity : AppCompatActivity() {
     private fun resetFilter() {
         binding.ivMainDisplay.colorFilter = ColorMatrixColorFilter(ColorMatrixFactory.toDefaultFilter())
     }
-
-    companion object {
-        private const val PROGRESS_DEFAULT = 255
-    }
 }
