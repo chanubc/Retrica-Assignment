@@ -13,7 +13,8 @@ import coil3.load
 import com.chanu.retrica.R
 import com.chanu.retrica.databinding.ActivityMainBinding
 import com.chanu.retrica.filter.ColorMatrixFactory
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -50,15 +51,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun collectState() {
-        lifecycleScope.launch {
-            viewModel.filterState.flowWithLifecycle(lifecycle).collect { event ->
-                when (event) {
-                    FilterState.Default -> resetFilter()
-                    FilterState.GrayScale -> applyGrayScale()
-                    is FilterState.Brightness -> applyBrightness(event.progress)
-                }
+        collectFilterState()
+        collectProgressState()
+    }
+
+    private fun collectFilterState() {
+        viewModel.filterState.flowWithLifecycle(lifecycle).onEach { event ->
+            when (event) {
+                is FilterState.Brightness -> applyBrightness(event.progress)
+                FilterState.GrayScale -> applyGrayScale()
+                FilterState.Default -> resetFilter()
             }
-        }
+        }.launchIn(lifecycleScope)
+    }
+
+    private fun collectProgressState() {
+        viewModel.progress.flowWithLifecycle(lifecycle).onEach { progress ->
+            binding.sbMainLuminosity.progress = progress
+        }.launchIn(lifecycleScope)
     }
 
     private fun applyBrightness(brightness: Float) {
@@ -67,16 +77,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun applyGrayScale() {
         binding.ivMainDisplay.colorFilter = ColorMatrixColorFilter(ColorMatrixFactory.toGrayScaleFilter())
-        resetSeekBar()
     }
 
     private fun resetFilter() {
         binding.ivMainDisplay.colorFilter = ColorMatrixColorFilter(ColorMatrixFactory.toDefaultFilter())
-        resetSeekBar()
-    }
-
-    private fun resetSeekBar() {
-        binding.sbMainLuminosity.progress = PROGRESS_DEFAULT
     }
 
     companion object {
