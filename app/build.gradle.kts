@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.chanu.retrica"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.chanu.retrica"
@@ -58,4 +58,9 @@ dependencies {
     implementation(libs.timber)
     // coroutine
     implementation(libs.bundles.coroutine)
+    // Coil
+    implementation(libs.coil)
+
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.fragment.ktx)
 }
