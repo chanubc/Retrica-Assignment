@@ -58,4 +58,9 @@ dependencies {
     implementation(libs.timber)
     // coroutine
     implementation(libs.bundles.coroutine)
+    // Coil
+    implementation(libs.coil)
+
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.fragment.ktx)
 }
