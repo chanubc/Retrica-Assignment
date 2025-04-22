@@ -159,8 +159,7 @@ A' = p*R + q*G + r*B + s*A + t
 
 
 1. **싱글턴 인스턴스를 재사용 하는 경우에 있어 동시성 문제가 발생하는지 궁금합니다.**
-    
-    ![image.png](attachment:c6ba4ab0-453d-41eb-a57a-dea5bb982c17:image.png)
+    ![image](https://github.com/user-attachments/assets/7fa6ffed-c82a-4d3d-825b-e91ed0850cd6)
     
 
 1. **필터를 먼저 선택한 후 카메라 촬영**
