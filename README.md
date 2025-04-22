@@ -1,4 +1,4 @@
-﻿# Retrica-Assignment
+﻿# Retrica-Color-Matrix
 
 ## 1. 프로젝트 소개
 - **주제:** Android 앱 내 이미지 필터 기능 구현
