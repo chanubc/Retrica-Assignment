@@ -12,6 +12,10 @@
     - **UI 프레임워크**: View System (XML)
 
 ### **📌** 주요 기능 및 완성 화면
+| 흑백 필터 | 밝기 증감 | 원본 되돌리기 |
+|--------|--------|--------|
+| <img src="https://github.com/user-attachments/assets/dc03000e-3cc0-4e00-a632-62f0a4a1a4e0" width="200"/> | <img src="https://github.com/user-attachments/assets/3429c573-8efc-46d6-a696-4f1cd81e5b53" width="200"/> | <img src="https://github.com/user-attachments/assets/cfc2c969-1b27-41ee-a549-c078904dfb5f" width="200"/> |
+
 
 
 ## 2. 필터 기능 구현 설명
